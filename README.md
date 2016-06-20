@@ -243,14 +243,14 @@ It has been updated to fit the standards of Nerium International.
 
     // good
     function inbox(messages) {
-      items = [];
+        items = [];
 
-      for (i = 0; i < length; i++) {
-        // use direct assignment in this case because we're micro-optimizing.
-        items[i] = '<li>' + messages[i].message + '</li>';
-      }
+        for (i = 0; i < length; i++) {
+            // use direct assignment in this case because we're micro-optimizing.
+            items[i] = '<li>' + messages[i].message + '</li>';
+        }
 
-      return '<ul>' + items.join('') + '</ul>';
+        return '<ul>' + items.join('') + '</ul>';
     }
     ```
 
@@ -894,7 +894,7 @@ It has been updated to fit the standards of Nerium International.
 
     // good
     var leds = stage.selectAll('.led')
-            .data(data)
+        .data(data)
         .enter().append('svg:svg')
             .classed('led', true)
             .attr('width', (radius + margin) * 2)
