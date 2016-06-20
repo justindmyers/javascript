@@ -87,14 +87,14 @@ It has been updated to fit the standards of Nerium International.
     ```javascript
     // bad
     var superman = {
-      default: { clark: 'kent' },
-      private: true
+        default: { clark: 'kent' },
+        private: true
     };
 
     // good
     var superman = {
-      defaults: { clark: 'kent' },
-      hidden: true
+        defaults: { clark: 'kent' },
+        hidden: true
     };
     ```
 
@@ -103,17 +103,17 @@ It has been updated to fit the standards of Nerium International.
     ```javascript
     // bad
     var superman = {
-      class: 'alien'
+        class: 'alien'
     };
 
     // bad
     var superman = {
-      klass: 'alien'
+        klass: 'alien'
     };
 
     // good
     var superman = {
-      type: 'alien'
+        type: 'alien'
     };
     ```
 
@@ -153,7 +153,7 @@ It has been updated to fit the standards of Nerium International.
 
     // bad
     for (i = 0; i < len; i++) {
-      itemsCopy[i] = items[i];
+        itemsCopy[i] = items[i];
     }
 
     // good
@@ -164,8 +164,8 @@ It has been updated to fit the standards of Nerium International.
 
     ```javascript
     function trigger() {
-      var args = Array.prototype.slice.call(arguments);
-      ...
+        var args = Array.prototype.slice.call(arguments);
+        ...
     }
     ```
 
@@ -218,27 +218,27 @@ It has been updated to fit the standards of Nerium International.
     var i;
 
     messages = [{
-      state: 'success',
-      message: 'This one worked.'
+        state: 'success',
+        message: 'This one worked.'
     }, {
-      state: 'success',
-      message: 'This one worked as well.'
+        state: 'success',
+        message: 'This one worked as well.'
     }, {
-      state: 'error',
-      message: 'This one did not work.'
+        state: 'error',
+        message: 'This one did not work.'
     }];
 
     length = messages.length;
 
     // bad
     function inbox(messages) {
-      items = '<ul>';
+        items = '<ul>';
 
-      for (i = 0; i < length; i++) {
-        items += '<li>' + messages[i].message + '</li>';
-      }
+        for (i = 0; i < length; i++) {
+            items += '<li>' + messages[i].message + '</li>';
+        }
 
-      return items + '</ul>';
+        return items + '</ul>';
     }
 
     // good
@@ -264,17 +264,17 @@ It has been updated to fit the standards of Nerium International.
     ```javascript
     // anonymous function expression
     var anonymous = function () {
-      return true;
+        return true;
     };
 
     // named function expression
     var named = function named() {
-      return true;
+        return true;
     };
 
     // immediately-invoked function expression (IIFE)
     (function () {
-      console.log('Welcome to the Internet. Please follow me.');
+        console.log('Welcome to the Internet. Please follow me.');
     }());
     ```
 
@@ -284,17 +284,17 @@ It has been updated to fit the standards of Nerium International.
     ```javascript
     // bad
     if (currentUser) {
-      function test() {
-        console.log('Nope.');
-      }
+        function test() {
+            console.log('Nope.');
+        }
     }
 
     // good
     var test;
     if (currentUser) {
-      test = function test() {
-        console.log('Yup.');
-      };
+        test = function test() {
+            console.log('Yup.');
+        };
     }
     ```
 
@@ -303,12 +303,12 @@ It has been updated to fit the standards of Nerium International.
     ```javascript
     // bad
     function nope(name, options, arguments) {
-      // ...stuff...
+        // ...stuff...
     }
 
     // good
     function yup(name, options, args) {
-      // ...stuff...
+        // ...stuff...
     }
     ```
 
@@ -322,8 +322,8 @@ It has been updated to fit the standards of Nerium International.
 
     ```javascript
     var luke = {
-      jedi: true,
-      age: 28
+        jedi: true,
+        age: 28
     };
 
     // bad
@@ -337,12 +337,12 @@ It has been updated to fit the standards of Nerium International.
 
     ```javascript
     var luke = {
-      jedi: true,
-      age: 28
+        jedi: true,
+        age: 28
     };
 
     function getProp(prop) {
-      return luke[prop];
+        return luke[prop];
     }
 
     var isJedi = getProp('jedi');
@@ -414,61 +414,61 @@ It has been updated to fit the standards of Nerium International.
     ```javascript
     // bad
     function () {
-      test();
-      console.log('doing stuff..');
+        test();
+        console.log('doing stuff..');
 
-      //..other stuff..
+        //..other stuff..
 
-      var name = getName();
+        var name = getName();
 
-      if (name === 'test') {
-        return false;
-      }
+        if (name === 'test') {
+            return false;
+        }
 
       return name;
     }
 
     // good
     function () {
-      var name = getName();
+        var name = getName();
 
-      test();
-      console.log('doing stuff..');
+        test();
+        console.log('doing stuff..');
 
-      //..other stuff..
+        //..other stuff..
 
-      if (name === 'test') {
-        return false;
-      }
+        if (name === 'test') {
+            return false;
+        }
 
       return name;
     }
 
     // bad - unnecessary function call
     function () {
-      var name = getName();
+        var name = getName();
 
-      if (!arguments.length) {
-        return false;
-      }
+        if (!arguments.length) {
+            return false;
+        }
 
-      this.setFirstName(name);
+        this.setFirstName(name);
 
-      return true;
+        return true;
     }
 
     // good
     function () {
-      var name;
+        var name;
 
-      if (!arguments.length) {
-        return false;
-      }
+        if (!arguments.length) {
+            return false;
+        }
 
-      name = getName();
-      this.setFirstName(name);
+        name = getName();
+        this.setFirstName(name);
 
-      return true;
+        return true;
     }
     ```
 
@@ -483,7 +483,7 @@ It has been updated to fit the standards of Nerium International.
     // we know this wouldn't work (assuming there
     // is no notDefined global variable)
     function example() {
-      console.log(notDefined); // => throws a ReferenceError
+        console.log(notDefined); // => throws a ReferenceError
     }
 
     // creating a variable declaration after you
@@ -491,17 +491,17 @@ It has been updated to fit the standards of Nerium International.
     // variable hoisting. Note: the assignment
     // value of `true` is not hoisted.
     function example() {
-      console.log(declaredButNotAssigned); // => undefined
-      var declaredButNotAssigned = true;
+        console.log(declaredButNotAssigned); // => undefined
+        var declaredButNotAssigned = true;
     }
 
     // The interpreter is hoisting the variable
     // declaration to the top of the scope,
     // which means our example could be rewritten as:
     function example() {
-      var declaredButNotAssigned;
-      console.log(declaredButNotAssigned); // => undefined
-      declaredButNotAssigned = true;
+        var declaredButNotAssigned;
+        console.log(declaredButNotAssigned); // => undefined
+        declaredButNotAssigned = true;
     }
     ```
 
@@ -509,13 +509,13 @@ It has been updated to fit the standards of Nerium International.
 
     ```javascript
     function example() {
-      console.log(anonymous); // => undefined
+        console.log(anonymous); // => undefined
 
-      anonymous(); // => TypeError anonymous is not a function
+        anonymous(); // => TypeError anonymous is not a function
 
-      var anonymous = function () {
-        console.log('anonymous function expression');
-      };
+        var anonymous = function () {
+            console.log('anonymous function expression');
+        };
     }
     ```
 
@@ -523,27 +523,27 @@ It has been updated to fit the standards of Nerium International.
 
     ```javascript
     function example() {
-      console.log(named); // => undefined
+        console.log(named); // => undefined
 
-      named(); // => TypeError named is not a function
+        named(); // => TypeError named is not a function
 
-      superPower(); // => ReferenceError superPower is not defined
+        superPower(); // => ReferenceError superPower is not defined
 
-      var named = function superPower() {
-        console.log('Flying');
-      };
+        var named = function superPower() {
+            console.log('Flying');
+        };
     }
 
     // the same is true when the function name
     // is the same as the variable name.
     function example() {
-      console.log(named); // => undefined
+        console.log(named); // => undefined
 
-      named(); // => TypeError named is not a function
+        named(); // => TypeError named is not a function
 
-      var named = function named() {
-        console.log('named');
-      }
+        var named = function named() {
+            console.log('named');
+        }
     }
     ```
 
@@ -551,11 +551,11 @@ It has been updated to fit the standards of Nerium International.
 
     ```javascript
     function example() {
-      superPower(); // => Flying
+        superPower(); // => Flying
 
-      function superPower() {
-        console.log('Flying');
-      }
+        function superPower() {
+            console.log('Flying');
+        }
     }
     ```
 
@@ -579,8 +579,8 @@ It has been updated to fit the standards of Nerium International.
 
     ```javascript
     if ([0]) {
-      // true
-      // An array is an object, objects evaluate to true
+        // true
+        // An array is an object, objects evaluate to true
     }
     ```
 
@@ -589,22 +589,22 @@ It has been updated to fit the standards of Nerium International.
     ```javascript
     // bad
     if (name !== '') {
-      // ...stuff...
+        // ...stuff...
     }
 
     // good
     if (name) {
-      // ...stuff...
+        // ...stuff...
     }
 
     // bad
     if (collection.length > 0) {
-      // ...stuff...
+        // ...stuff...
     }
 
     // good
     if (collection.length) {
-      // ...stuff...
+        // ...stuff...
     }
     ```
 
@@ -620,14 +620,14 @@ It has been updated to fit the standards of Nerium International.
     ```javascript
     // bad
     if (test)
-      return false;
+        return false;
 
     // good
     if (test) return false;
 
     // good
     if (test) {
-      return false;
+        return false;
     }
 
     // bad
@@ -635,7 +635,7 @@ It has been updated to fit the standards of Nerium International.
 
     // good
     function () {
-      return false;
+        return false;
     }
     ```
 
@@ -645,19 +645,19 @@ It has been updated to fit the standards of Nerium International.
     ```javascript
     // bad
     if (test) {
-      thing1();
-      thing2();
+        thing1();
+        thing2();
     }
     else {
-      thing3();
+        thing3();
     }
 
     // good
     if (test) {
-      thing1();
-      thing2();
+        thing1();
+        thing2();
     } else {
-      thing3();
+        thing3();
     }
     ```
 
@@ -678,9 +678,9 @@ It has been updated to fit the standards of Nerium International.
     // @return {Element} element
     function make(tag) {
 
-      // ...stuff...
+        // ...stuff...
 
-      return element;
+        return element;
     }
 
     // good
@@ -693,9 +693,9 @@ It has been updated to fit the standards of Nerium International.
      */
     function make(tag) {
 
-      // ...stuff...
+        // ...stuff...
 
-      return element;
+        return element;
     }
     ```
 
@@ -711,21 +711,21 @@ It has been updated to fit the standards of Nerium International.
 
     // bad
     function getType() {
-      console.log('fetching type...');
-      // set the default type to 'no type'
-      var type = this._type || 'no type';
+        console.log('fetching type...');
+        // set the default type to 'no type'
+        var type = this._type || 'no type';
 
-      return type;
+        return type;
     }
 
     // good
     function getType() {
-      console.log('fetching type...');
+        console.log('fetching type...');
 
-      // set the default type to 'no type'
-      var type = this._type || 'no type';
+        // set the default type to 'no type'
+        var type = this._type || 'no type';
 
-      return type;
+        return type;
     }
     ```
 
@@ -736,10 +736,10 @@ It has been updated to fit the standards of Nerium International.
     ```javascript
     function Calculator() {
 
-      // FIXME: shouldn't use a global here
-      total = 0;
+        // FIXME: shouldn't use a global here
+        total = 0;
 
-      return this;
+        return this;
     }
     ```
 
@@ -748,10 +748,10 @@ It has been updated to fit the standards of Nerium International.
     ```javascript
     function Calculator() {
 
-      // TODO: total should be configurable by an options param
-      this.total = 0;
+        // TODO: total should be configurable by an options param
+        this.total = 0;
 
-      return this;
+        return this;
     }
     ```
 
@@ -810,22 +810,22 @@ It has been updated to fit the standards of Nerium International.
     ```javascript
     // bad
     if(isJedi) {
-      fight ();
+        fight ();
     }
 
     // good
     if (isJedi) {
-      fight();
+        fight();
     }
 
     // bad
     function fight () {
-      console.log ('Swooosh!');
+        console.log ('Swooosh!');
     }
 
     // good
     function fight() {
-      console.log('Swooosh!');
+        console.log('Swooosh!');
     }
     ```
 
@@ -844,14 +844,14 @@ It has been updated to fit the standards of Nerium International.
     ```javascript
     // bad
     (function (global) {
-      // ...stuff...
+        // ...stuff...
     })(this);
     ```
 
     ```javascript
     // bad
     (function (global) {
-      // ...stuff...
+        // ...stuff...
     })(this);↵
     ↵
     ```
@@ -859,7 +859,7 @@ It has been updated to fit the standards of Nerium International.
     ```javascript
     // good
     (function (global) {
-      // ...stuff...
+        // ...stuff...
     })(this);↵
     ```
 
@@ -873,18 +873,18 @@ It has been updated to fit the standards of Nerium International.
     // bad
     $('#items').
       find('.selected').
-        highlight().
-        end().
+          highlight().
+          end().
       find('.open').
-        updateCount();
+          updateCount();
 
     // good
     $('#items')
       .find('.selected')
-        .highlight()
-        .end()
+          .highlight()
+          .end()
       .find('.open')
-        .updateCount();
+          .updateCount();
 
     // bad
     var leds = stage.selectAll('.led').data(data).enter().append('svg:svg').classed('led', true)
@@ -894,13 +894,13 @@ It has been updated to fit the standards of Nerium International.
 
     // good
     var leds = stage.selectAll('.led')
-        .data(data)
-      .enter().append('svg:svg')
-        .classed('led', true)
-        .attr('width', (radius + margin) * 2)
-      .append('svg:g')
-        .attr('transform', 'translate(' + (radius + margin) + ',' + (radius + margin) + ')')
-        .call(tron.led);
+            .data(data)
+        .enter().append('svg:svg')
+            .classed('led', true)
+            .attr('width', (radius + margin) * 2)
+        .append('svg:g')
+            .attr('transform', 'translate(' + (radius + margin) + ',' + (radius + margin) + ')')
+            .call(tron.led);
     ```
 
   - Leave a blank line after blocks and before the next statement
@@ -908,33 +908,33 @@ It has been updated to fit the standards of Nerium International.
     ```javascript
     // bad
     if (foo) {
-      return bar;
+        return bar;
     }
     return baz;
 
     // good
     if (foo) {
-      return bar;
+        return bar;
     }
 
     return baz;
 
     // bad
     var obj = {
-      foo: function () {
-      },
-      bar: function () {
-      }
+        foo: function () {
+        },
+        bar: function () {
+        }
     };
     return obj;
 
     // good
     var obj = {
-      foo: function () {
-      },
+        foo: function () {
+        },
 
-      bar: function () {
-      }
+        bar: function () {
+        }
     };
 
     return obj;
@@ -950,32 +950,32 @@ It has been updated to fit the standards of Nerium International.
     ```javascript
     // bad
     var story = [
-        once
-      , upon
-      , aTime
+          once
+        , upon
+        , aTime
     ];
 
     // good
     var story = [
-      once,
-      upon,
-      aTime
+        once,
+        upon,
+        aTime
     ];
 
     // bad
     var hero = {
-        firstName: 'Bob'
-      , lastName: 'Parr'
-      , heroName: 'Mr. Incredible'
-      , superPower: 'strength'
+          firstName: 'Bob'
+        , lastName: 'Parr'
+        , heroName: 'Mr. Incredible'
+        , superPower: 'strength'
     };
 
     // good
     var hero = {
-      firstName: 'Bob',
-      lastName: 'Parr',
-      heroName: 'Mr. Incredible',
-      superPower: 'strength'
+        firstName: 'Bob',
+        lastName: 'Parr',
+        heroName: 'Mr. Incredible',
+        superPower: 'strength'
     };
     ```
 
@@ -986,24 +986,24 @@ It has been updated to fit the standards of Nerium International.
     ```javascript
     // bad
     var hero = {
-      firstName: 'Kevin',
-      lastName: 'Flynn',
+        firstName: 'Kevin',
+        lastName: 'Flynn',
     };
 
     var heroes = [
-      'Batman',
-      'Superman',
+        'Batman',
+        'Superman',
     ];
 
     // good
     var hero = {
-      firstName: 'Kevin',
-      lastName: 'Flynn'
+        firstName: 'Kevin',
+        lastName: 'Flynn'
     };
 
     var heroes = [
-      'Batman',
-      'Superman'
+        'Batman',
+        'Superman'
     ];
     ```
 
@@ -1017,20 +1017,20 @@ It has been updated to fit the standards of Nerium International.
     ```javascript
     // bad
     (function () {
-      var name = 'Skywalker'
-      return name
+        var name = 'Skywalker'
+        return name
     })()
 
     // good
     (function () {
-      var name = 'Skywalker';
-      return name;
+        var name = 'Skywalker';
+        return name;
     })();
 
     // good (guards against the function becoming an argument when two files with IIFEs are concatenated)
     ;(function () {
-      var name = 'Skywalker';
-      return name;
+        var name = 'Skywalker';
+        return name;
     })();
     ```
 
@@ -1129,12 +1129,12 @@ It has been updated to fit the standards of Nerium International.
     ```javascript
     // bad
     function q() {
-      // ...stuff...
+        // ...stuff...
     }
 
     // good
     function query() {
-      // ..stuff..
+        // ..stuff..
     }
     ```
 
@@ -1157,20 +1157,20 @@ It has been updated to fit the standards of Nerium International.
     ```javascript
     // bad
     function user(options) {
-      this.name = options.name;
+        this.name = options.name;
     }
 
     var bad = new user({
-      name: 'nope'
+        name: 'nope'
     });
 
     // good
     function User(options) {
-      this.name = options.name;
+        this.name = options.name;
     }
 
     var good = new User({
-      name: 'yup'
+        name: 'yup'
     });
     ```
 
@@ -1190,26 +1190,26 @@ It has been updated to fit the standards of Nerium International.
     ```javascript
     // bad
     function () {
-      var self = this;
-      return function () {
-        console.log(self);
-      };
+        var self = this;
+        return function () {
+            console.log(self);
+        };
     }
 
     // bad
     function () {
-      var that = this;
-      return function () {
-        console.log(that);
-      };
+        var that = this;
+        return function () {
+            console.log(that);
+        };
     }
 
     // good
     function () {
-      var _this = this;
-      return function () {
-        console.log(_this);
-      };
+        var _this = this;
+        return function () {
+            console.log(_this);
+        };
     }
     ```
 
@@ -1217,7 +1217,7 @@ It has been updated to fit the standards of Nerium International.
     ```javascript
     // file contents
     class CheckBox {
-      // ...
+        // ...
     }
     module.exports = CheckBox;
 
@@ -1259,12 +1259,12 @@ It has been updated to fit the standards of Nerium International.
     ```javascript
     // bad
     if (!dragon.age()) {
-      return false;
+        return false;
     }
 
     // good
     if (!dragon.hasAge()) {
-      return false;
+        return false;
     }
     ```
 
@@ -1272,17 +1272,17 @@ It has been updated to fit the standards of Nerium International.
 
     ```javascript
     function Jedi(options) {
-      options || (options = {});
-      var lightsaber = options.lightsaber || 'blue';
-      this.set('lightsaber', lightsaber);
+        options || (options = {});
+        var lightsaber = options.lightsaber || 'blue';
+        this.set('lightsaber', lightsaber);
     }
 
     Jedi.prototype.set = function set(key, val) {
-      this[key] = val;
+        this[key] = val;
     };
 
     Jedi.prototype.get = function get(key) {
-      return this[key];
+        return this[key];
     };
     ```
 
@@ -1295,27 +1295,27 @@ It has been updated to fit the standards of Nerium International.
 
     ```javascript
     function Jedi() {
-      console.log('new jedi');
+        console.log('new jedi');
     }
 
     // bad
     Jedi.prototype = {
-      fight: function fight() {
-        console.log('fighting');
-      },
+        fight: function fight() {
+            console.log('fighting');
+        },
 
-      block: function block() {
-        console.log('blocking');
-      }
+        block: function block() {
+            console.log('blocking');
+        }
     };
 
     // good
     Jedi.prototype.fight = function fight() {
-      console.log('fighting');
+        console.log('fighting');
     };
 
     Jedi.prototype.block = function block() {
-      console.log('blocking');
+        console.log('blocking');
     };
     ```
 
@@ -1324,12 +1324,12 @@ It has been updated to fit the standards of Nerium International.
     ```javascript
     // bad
     Jedi.prototype.jump = function jump() {
-      this.jumping = true;
-      return true;
+        this.jumping = true;
+        return true;
     };
 
     Jedi.prototype.setHeight = function setHeight(height) {
-      this.height = height;
+        this.height = height;
     };
 
     var luke = new Jedi();
@@ -1338,19 +1338,19 @@ It has been updated to fit the standards of Nerium International.
 
     // good
     Jedi.prototype.jump = function jump() {
-      this.jumping = true;
-      return this;
+        this.jumping = true;
+        return this;
     };
 
     Jedi.prototype.setHeight = function setHeight(height) {
-      this.height = height;
-      return this;
+        this.height = height;
+        return this;
     };
 
     var luke = new Jedi();
 
     luke.jump()
-      .setHeight(20);
+        .setHeight(20);
     ```
 
 
@@ -1358,16 +1358,16 @@ It has been updated to fit the standards of Nerium International.
 
     ```javascript
     function Jedi(options) {
-      options || (options = {});
-      this.name = options.name || 'no name';
+        options || (options = {});
+        this.name = options.name || 'no name';
     }
 
     Jedi.prototype.getName = function getName() {
-      return this.name;
+        return this.name;
     };
 
     Jedi.prototype.toString = function toString() {
-      return 'Jedi - ' + this.getName();
+        return 'Jedi - ' + this.getName();
     };
     ```
 
@@ -1385,7 +1385,7 @@ It has been updated to fit the standards of Nerium International.
     ...
 
     $(this).on('listingUpdated', function (e, listingId) {
-      // do something with listingId
+        // do something with listingId
     });
     ```
 
@@ -1398,7 +1398,7 @@ It has been updated to fit the standards of Nerium International.
     ...
 
     $(this).on('listingUpdated', function (e, data) {
-      // do something with data.listingId
+        // do something with data.listingId
     });
     ```
 
@@ -1416,20 +1416,20 @@ It has been updated to fit the standards of Nerium International.
     // fancyInput/fancyInput.js
 
     !function (global) {
-      'use strict';
+        'use strict';
 
-      var previousFancyInput = global.FancyInput;
+        var previousFancyInput = global.FancyInput;
 
-      function FancyInput(options) {
-        this.options = options || {};
-      }
+        function FancyInput(options) {
+            this.options = options || {};
+        }
 
-      FancyInput.noConflict = function noConflict() {
-        global.FancyInput = previousFancyInput;
-        return FancyInput;
-      };
+        FancyInput.noConflict = function noConflict() {
+            global.FancyInput = previousFancyInput;
+            return FancyInput;
+        };
 
-      global.FancyInput = FancyInput;
+        global.FancyInput = FancyInput;
     }(this);
     ```
 
@@ -1453,25 +1453,25 @@ It has been updated to fit the standards of Nerium International.
     ```javascript
     // bad
     function setSidebar() {
-      $('.sidebar').hide();
+        $('.sidebar').hide();
 
-      // ...stuff...
+        // ...stuff...
 
-      $('.sidebar').css({
-        'background-color': 'pink'
-      });
+        $('.sidebar').css({
+            'background-color': 'pink'
+        });
     }
 
     // good
     function setSidebar() {
-      var $sidebar = $('.sidebar');
-      $sidebar.hide();
+        var $sidebar = $('.sidebar');
+        $sidebar.hide();
 
-      // ...stuff...
+        // ...stuff...
 
-      $sidebar.css({
-        'background-color': 'pink'
-      });
+        $sidebar.css({
+            'background-color': 'pink'
+        });
     }
     ```
 
@@ -1511,7 +1511,7 @@ It has been updated to fit the standards of Nerium International.
 
     ```javascript
     function () {
-      return true;
+        return true;
     }
     ```
 
